@@ -62,6 +62,11 @@ class stage1 {
     provider => 'apt',
     package  => 'php-apc',
   }
+  class { 'php::extension::gd':
+    ensure   => 'present',
+    provider => 'apt',
+    notify   => Service['apache2'],
+  }
   class { 'php::extension::curl':
     ensure   => 'present',
     provider => 'apt',
