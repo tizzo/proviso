@@ -5,10 +5,8 @@ mod 'puppetlabs/mysql'
 mod 'erikwebb/drush'
 mod 'puppetlabs/apache'
 mod 'nodes/php'
-mod 'thomasvandoren/redis'
 mod 'saz/memcached'
 
-
-# mod 'apt',
-#   :git => 'https://github.com/puppetlabs/puppetlabs-apt.git',
-#   :ref => 'feature/master/dans_refactor'
+mod 'redis',
+  :git => 'https://github.com/dol/puppet-redis.git',
+  :ref => '6fb86422e7'
