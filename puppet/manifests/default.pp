@@ -24,6 +24,8 @@ class stage1 {
   class { 'apache::mod::mime': }->
   class { 'apache::mod::rewrite': }->
   class { 'apache::mod::deflate': }->
+  class { 'apache::mod::php': }->
+
   # TODO: We probably want this module but this isn't working for some reason.
   # class { 'apache::mod::expires': }->
   class { 'apache::mod::ssl': }
@@ -32,7 +34,6 @@ class stage1 {
   package { 'curl':
     ensure => 'present',
   }
-
 
   Php::Extension <| |> -> Php::Config <| |> ~> Service["apache2"]
 
